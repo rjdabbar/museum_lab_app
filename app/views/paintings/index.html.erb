@@ -4,6 +4,8 @@
   <%= submit_tag "Search" %>
 <% end %>
 
+<p><%= button_to "Add a new painting", new_painting_path, method: :get %></p>
+
 <h2>All Artwork in the Database:</h2>
 <% @paintings.each do |painting| %>
  <p> <%= link_to painting.title, painting %> was done by <%= painting.artist.name %> and can be found in: <%= painting.museum.name %></p>

@@ -1,5 +1,16 @@
 <b><h1><%= @museum.name %></h1></b>
-<h2>Works housed in <%= @museum.name %></h2>
+<h2>Works housed in: <%= @museum.name %></h2>
 <% @museum.paintings.each do |painting| %>
-  <%= link_to painting.title, painting %>
+  <ul>
+    <li><%= link_to painting.title, painting %></li>
+  </ul>
 <% end %>
+
+<h2>Artists on display at <%= @museum.name %>:</h2>
+<% @museum.artists.each do |artist| %>
+  <ul>
+   <li><%= link_to artist.name, artist %></li> 
+  </ul>
+<% end %>
+
+

@@ -1,5 +1,14 @@
 <b><h1><%= @artist.name %></h1></b>
 <h2>Works by: <%= @artist.name %></h2>
 <% @artist.paintings.each do |painting| %>
-  <%= link_to painting.title, painting %>
+  <ul>
+    <li><%= link_to painting.title, painting %></li>
+  </ul>
+<% end %>
+
+<h2><%= @artist.name %> is on display in:</h2>
+<% @artist.museums.each do |museum| %>
+ <ul>
+    <li><%= link_to museum.name, museum %></li>
+ </ul>
 <% end %>

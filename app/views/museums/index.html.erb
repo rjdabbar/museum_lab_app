@@ -1,3 +1,6 @@
+<h1>All the museums</h1>
+
+<%= button_to "Add a museum", new_museum_path, method: :get %>
 <% @museums.each do |museum| %>
   <p><%= link_to museum.name, museum %></p>
 <% end %>

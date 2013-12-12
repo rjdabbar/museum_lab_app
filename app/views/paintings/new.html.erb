@@ -1,0 +1,20 @@
+<h1>Add a new painting</h1>
+
+
+<%= form_for @painting do |f| %>
+  <fieldset>
+    <p>
+    <%= f.label :title, "Title:" %>
+    <%= f.text_field :title %>
+    </p>
+    <p>
+    <%= f.label :artist_id, "Select an artist:" %>
+    <%= f.select :artist_id, @artists.map {|a| [a.name, a.id] }%>
+    </p>
+    <p>
+    <%= f.label :museum_id, "Select a museum:" %>
+    <%= f.select :museum_id, options_from_collection_for_select(@museums, "id", "name") %>
+    </p>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
