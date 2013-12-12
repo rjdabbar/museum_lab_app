@@ -1,0 +1,5 @@
+<b><h1><%= @artist.name %></h1></b>
+<h2>Works by: <%= @artist.name %></h2>
+<% @artist.paintings.each do |painting| %>
+  <%= link_to painting.title, painting %>
+<% end %>

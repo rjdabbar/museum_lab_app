@@ -1,0 +1,5 @@
+<b><h1><%= @museum.name %></h1></b>
+<h2>Works housed in <%= @museum.name %></h2>
+<% @museum.paintings.each do |painting| %>
+  <%= link_to painting.title, painting %>
+<% end %>

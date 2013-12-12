@@ -1,0 +1,10 @@
+
+<%= form_tag '/', method: :get do %>
+  <%= search_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<h2>All Artwork in the Database:</h2>
+<% @paintings.each do |painting| %>
+ <p> <%= link_to painting.title, painting %> was done by <%= painting.artist.name %> and can be found in: <%= painting.museum.name %></p>
+<% end %>
